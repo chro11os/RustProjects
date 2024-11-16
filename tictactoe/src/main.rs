@@ -1,16 +1,17 @@
 use std::io;
 fn drawBoard(board: &[[char; 3]; 3]) {
-    let i:i32 = 3;
-    let j:i32 = 3;
+    let mut range = 1..3;
 
     println!("-------------");
 
-    for i in i {
+    for i in range {
         println!("| ");
-        for j in j {
+        for j in range {
             drawBoard(board[i:usize][j:usize]);
         }
     }
     println!("-------------");
 }
-fn main() {}
+fn main() {
+    drawBoard(&[]);
+}
