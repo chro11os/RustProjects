@@ -1,12 +1,13 @@
-use std::io;
+use std::{io, ops::Range};
+
 fn drawBoard(board: &[[char; 3]; 3]) {
-    let mut BoardRange = 1..3;
+    let mut BoardRange: Range<usize> = 1..3;
 
     println!("-------------");
 
-    for i in BoardRange {
+    for i in BoardRange.clone() {
         println!("| ");
-        for j in BoardRange {
+        for j in BoardRange.clone() {
             println!("{}", board[i][j]);
         }
     }
@@ -14,6 +15,4 @@ fn drawBoard(board: &[[char; 3]; 3]) {
     println!("-------------");
 }
 
-fn main() {
-    drawBoard();
-}
+fn main() {}
